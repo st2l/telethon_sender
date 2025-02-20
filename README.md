@@ -17,6 +17,10 @@ DJANGO_SECRET_KEY=your_secret_key
 DJANGO_SUPERUSER_USERNAME=admin
 DJANGO_SUPERUSER_EMAIL=admin@example.com
 DJANGO_SUPERUSER_PASSWORD=your_admin_password
+
+
+TELEGRAM_API_ID=your_api_id  # from my.telegram.org
+TELEGRAM_API_HASH=your_api_hash
 ```
 
 ## 2. Изменение docker-compose.yml
