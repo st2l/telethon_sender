@@ -1,6 +1,6 @@
 from aiogram import Router, F
 from aiogram.filters import Command
-from aiogram.types import Message
+from aiogram.types import Message, CallbackQuery
 from robot.utils import get_text_by_name, identify_user
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
@@ -22,8 +22,9 @@ async def start(message: Message):
 
 
 @start_router.callback_query(F.data == "start")
-async def start_(message: Message):
-    await message.answer("Выберите опцию:", reply_markup=InlineKeyboardMarkup(
+async def start_(callback: CallbackQuery):
+    callback.answer('')
+    await callback.message.answer("Выберите опцию:", reply_markup=InlineKeyboardMarkup(
         inline_keyboard=[
             [InlineKeyboardButton(text="Контроль аккаунтов",
                                   callback_data="control_accounts")],
