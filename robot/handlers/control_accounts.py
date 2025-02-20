@@ -13,5 +13,6 @@ async def control_accounts(callback : CallbackQuery):
                 text="Вывести все аккаунты", callback_data="list_accounts")],
             [InlineKeyboardButton(text="Добавить аккаунт",
                                   callback_data="add_account")],
+            [InlineKeyboardButton(text="Назад", callback_data="start")]
         ]
     ))
