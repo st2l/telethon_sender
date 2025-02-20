@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import TelegramUser, BotText
+from .models import TelegramUser, BotText, TelegramAccount
 
 # Register your models here.
 
@@ -15,3 +15,10 @@ class TelegramUserAdmin(admin.ModelAdmin):
 class BotTextAdmin(admin.ModelAdmin):
     list_display = ("name", "text")
     search_fields = ("name",)
+
+
+@admin.register(TelegramAccount)
+class TelegramAccountAdmin(admin.ModelAdmin):
+    list_display = ("phone", "is_active", "last_used")
+    list_filter = ("is_active",)
+    search_fields = ("phone",)

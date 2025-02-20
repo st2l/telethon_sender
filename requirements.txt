@@ -40,4 +40,4 @@ tzlocal==5.3
 urllib3==2.3.0
 wheel==0.45.1
 yarl==1.18.3
-
+telethon

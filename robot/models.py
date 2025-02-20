@@ -35,3 +35,14 @@ class BotText(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class TelegramAccount(models.Model):
+    phone = models.CharField(max_length=15, unique=True)
+    session_file = models.CharField(max_length=255)
+    is_active = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    last_used = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.phone
